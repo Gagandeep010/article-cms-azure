@@ -11,10 +11,17 @@ class Config(object):
     SQL_PASSWORD = os.environ.get("SQL_PASSWORD")
 
     SQLALCHEMY_DATABASE_URI = (
-        f"mssql+pyodbc://{SQL_USER_NAME}:{SQL_PASSWORD}"
-        f"@{SQL_SERVER}:1433/{SQL_DATABASE}"
-        "?driver=ODBC+Driver+18+for+SQL+Server"
+    "mssql+pyodbc://{user}:{password}@{server}:1433/{database}"
+    "?driver=ODBC+Driver+18+for+SQL+Server"
+    "&Encrypt=yes"
+    "&TrustServerCertificate=no"
+    ).format(
+        user=SQL_USER_NAME,
+        password=SQL_PASSWORD,
+        server=SQL_SERVER,
+        database=SQL_DATABASE
     )
+
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Blob Storage
