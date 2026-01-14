@@ -11,7 +11,7 @@ from flask_session import Session
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Configure logging
+# Enable logging for Azure Log Stream
 if not app.debug:
     app.logger.setLevel(logging.INFO)
 

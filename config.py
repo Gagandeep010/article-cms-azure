@@ -13,7 +13,7 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = (
         f"mssql+pyodbc://{SQL_USER_NAME}:{SQL_PASSWORD}"
         f"@{SQL_SERVER}:1433/{SQL_DATABASE}"
-        "?driver=ODBC+Driver+17+for+SQL+Server"
+        "?driver=ODBC+Driver+18+for+SQL+Server"
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -22,7 +22,7 @@ class Config(object):
     BLOB_CONTAINER = os.environ.get("BLOB_CONTAINER")
     BLOB_STORAGE_KEY = os.environ.get("BLOB_STORAGE_KEY")
 
-    # Microsoft Auth (DO NOT CONFIGURE YET)
+    # Microsoft Auth (leave placeholders for now)
     CLIENT_SECRET = "ENTER_CLIENT_SECRET_HERE"
     CLIENT_ID = "ENTER_CLIENT_ID_HERE"
     AUTHORITY = "https://login.microsoftonline.com/common"
